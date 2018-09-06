@@ -126,6 +126,9 @@
         },
         "_artifactsLocationSasToken": {
             "type": "securestring"
+        },
+        "dnsIp" : {
+            "type" : "string"
         }
     },
     "variables": {
@@ -342,7 +345,12 @@
                             }
                         }
                     }
-                ]
+                ],
+                "dnsSettings": {
+                    "dnsServers": [
+                        "[parameters('dnsIp')]"
+                    ]
+                }
             }
         },
         {
